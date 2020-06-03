@@ -7,7 +7,6 @@ const url2 = "https://test-hermes.profisms.cz/work-tests/test1a.php";
 		const result = await getResponse.json();
 		const buffer = await crypto.subtle.digest('SHA-256', new TextEncoder("utf-8").encode(result.content));
 		const shaContent = Array.prototype.map.call(new Uint8Array(buffer), x=>(('00'+x.toString(16)).slice(-2))).join('');
-		console.log(shaContent);
 		const postResponse = await fetch(url2, {
 			method: "POST",
 			headers: {
@@ -26,10 +25,3 @@ const url2 = "https://test-hermes.profisms.cz/work-tests/test1a.php";
 		}
 	}
 })();
-
-
-//const getPromiseData = () => {
-//	const promise = fetch(url).then(promise => promise.json()).then(result => console.log(result));
-//}
-
-//getPromiseData();
