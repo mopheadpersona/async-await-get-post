@@ -14,7 +14,7 @@ const url2 = "https://test-hermes.profisms.cz/work-tests/test1a.php";
 			},
 			body: JSON.stringify({
 				"content": result.content,
-				"sha256": "crypting value of result.content"
+				"sha256": shaContent
 			})
 		});
 		if (postResponse.ok){
