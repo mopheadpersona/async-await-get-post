@@ -5,7 +5,7 @@ const url2 = "https://test-hermes.profisms.cz/work-tests/test1a.php";
 	const getResponse = await fetch(url1);
 	if (getResponse.ok){
 		const result = await getResponse.json();
-		const shaContent = result.content.crypto;
+		const shaContent = crypto.result.content;
 		console.log(shaContent);
 		const postResponse = await fetch(url2, {
 			method: "POST",
